@@ -27,26 +27,42 @@ export class SwingChampionsHeader extends LitElement {
 
             .header-wrap {
                 padding: var(--ddd-spacing-5) var(--ddd-spacing-6);
-                border-radius: 18px;
-                background-color: light-dark(#4d1d78, #24103d);
-                border: 1px solid light-dark(#8e44c7, #51307a);
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
-                color: white;
+                border-radius: var(--ddd-raduis-lg);
+
+                background: linear-gradient( 
+                    135deg, light-dark(
+                        var(--ddd-theme-default-athertonViolet),
+                        var(--ddd-theme-default-nittanyNavy)
+                        ),
+                light-dark(
+                    var(--ddd-theme-default-wonderPurple),
+                    var(--ddd-theme-default-navy80)
+                )
+                );
+                border: 2px solid light-dark(var(--ddd-theme-default-wonderPurple));
+                box-shadow: var(--ddd-boxShadow-sm);
+                color: var(--ddd-theme-default-white);
             }
 
             p {
                 margin: var(--ddd-spacing-3) 0 0 0;
                 font-size: var(--ddd-font-size-l);
             }
-            `
+
+            h1 {
+                font-size: var(--ddd-font-size-xxxl);
+            }
+            `,
         ];
     }
 
     //title and subtitle i guess 
     render () {
         return html`
-        <h1>Swing Champions Arena </h1>
-        <p>Tennis matches, rankings, and teams</p>
+        <header class="header-wrap">
+        <h1>${this.title}</h1>
+        <p>Tennis matches, rankings, teams, and player information</p>
+        </header>
         `;
     }
 }
