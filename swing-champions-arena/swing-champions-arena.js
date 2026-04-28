@@ -19,6 +19,7 @@ import "./swing-champions-schedule.js";
 import "./swing-champions-rankings.js";
 import "./swing-champions-hero.js";
 import "./swing-champions-footer.js";
+import "./swing-champions-player-card.js";
 
 export class SwingChampionsArena extends DDDSuper(I18NMixin(LitElement)) {
 
@@ -29,11 +30,13 @@ export class SwingChampionsArena extends DDDSuper(I18NMixin(LitElement)) {
   constructor() {
     super();
     this.title = "Swing Champions Arena"; // setting up the site title 
+    this.page = "home"; // this is saying that what page is it showing 
     this.t = this.t || {};
     this.t = {
       ...this.t,
       title: "Title",
     };
+
     this.registerLocalization({
       context: this,
       localesPath:
@@ -47,8 +50,23 @@ export class SwingChampionsArena extends DDDSuper(I18NMixin(LitElement)) {
     return {
       ...super.properties,
       title: { type: String },
+      page: { type: String },
     };
   }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.addEventListener("swing-champions-navigate", this.handleNavigate);// this is just a listener for the menu button 
+  }
+
+  disconnectedCallback() {
+    this.removeEventListener("swing-champions-navigate", this.handleNavigate);
+    super.disconnectedCallback();
+  }
+
+  handleNavigate(e) {
+    this.page = e.detail.page;
+  };
 
   // Lit scoped styles
   static get styles() {
@@ -58,15 +76,28 @@ export class SwingChampionsArena extends DDDSuper(I18NMixin(LitElement)) {
       :host {
         display: block;
         min-height: 100vh;
-        color: var(--ddd-theme-primary);
+        color: light-dark( var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white)
+        );
+        background: light-dark(
+          var(--ddd-theme-default-skyMaxLight), var(--ddd-theme-default-potentialMidnight)
+        );
         font-family: var(--ddd-font-navigation);
+
       }
       .wrapper {
-        margin: var(--ddd-spacing-2);
-        padding: var(--ddd-spacing-4);
+        margin: 0 auto;
+        padding: var(--ddd-spacing-5);
+        max-width: 1100px;
       }
+
       h3 span {
         font-size: var(--swing-champions-arena-label-font-size, var(--ddd-font-size-s));
+      }
+
+      main {
+        display: grid;
+        gap:var(--ddd-spacing-5);
+        margin-top: var(--ddd-spacing-5);
       }
     `];
   }
@@ -78,9 +109,17 @@ export class SwingChampionsArena extends DDDSuper(I18NMixin(LitElement)) {
 <div class="wrapper">
 <swing-champions-header title="${this.title}"></swing-champions-header>
 <swing-champions-menu></swing-champions-menu>
+<main>
+${this.page === "home"
+? html`
 <swing-champions-hero></swing-champions-hero>
-<swing-champions-schedule></swing-champions-schedule>
 <swing-champions-rankings></swing-champions-rankings>
+<swing-champions-player-card></swing-champions-player-card>
+`
+: html`
+<swing-champions-schedule></swing-champions-schedule>
+`}
+</main>
 <swing-champions-footer></swing-champions-footer>
 </div>`;
   }

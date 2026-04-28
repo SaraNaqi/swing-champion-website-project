@@ -1,5 +1,5 @@
 import { LitElement, html, css } from "lit";
-import { DDDSuper } from "@haxtheweb/d-d-d";
+import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 
 export class SwingChampionsHero extends DDDSuper(LitElement) {
     static get tag() {
@@ -17,20 +17,25 @@ export class SwingChampionsHero extends DDDSuper(LitElement) {
 
             .hero-box {
                 padding: var(--ddd-spacing-4);
-                border-radius: 16px;
-                background-color: light-dark(#76125f, #2c1c66);
-                border: 1px solid light-dark(#c053b3, #46082b);
+                border-radius: var(--ddd-radius-lg);
+                background-color: light-dark(
+                    var(--ddd-theme-default-skyLight),
+                    var(--ddd-theme-default-navy80)
+                );
+                border: 2px solid var(--ddd-theme-default-skyBlue);
             }
 
             p {
-                margin: 6px 0;
+                font-size: var(--ddd-font-size-m);
+                margin: 0;
                 line-height: 1.5;
+                
             }
 
             h2 {
-                    margin: 0 0 10px 0;
+                    margin: 0 0 var(--ddd-spacing-3) 0;
                     font-size: var(--ddd-font-size-l);
-            }
+                }
             `,
         ];
     }
@@ -38,7 +43,7 @@ export class SwingChampionsHero extends DDDSuper(LitElement) {
         return html`
         <div class="hero-box">
         <h2> Hey Welcome to the Swing champions arena website!!!</h2>
-        <p> this is a tennis website that shows matches, teams and rankings. </p>
+        <p> this is a tennis website that shows matches, teams, match players and rankings. you can look around and click on each section</p>
         </div>
         `;
     }
