@@ -2,9 +2,9 @@
  * Copyright 2026 SaraNaqi
  * @license Apache-2.0, see LICENSE for full text.
  */
-import { LitElement, html, css } from "lit";
-import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
-import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
+import { LitElement, html, css } from "./node_modules/lit/index.js";
+import { DDDSuper } from "./node_modules/@haxtheweb/d-d-d/d-d-d.js";
+import { I18NMixin } from "./node_modules/@haxtheweb/i18n-manager/lib/I18NMixin.js";
 
 /**
  * `swing-champions-arena`
@@ -104,21 +104,44 @@ export class SwingChampionsArena extends DDDSuper(I18NMixin(LitElement)) {
 
   // Lit render the HTML
   // loading the main section of the home page
+// i added the if condition since if i want to press a page i want specific things to show up not everything
+  renderPage() {
+    if (this.page === "home") {
+      return html`
+      <swing-champions-hero></swing-champions-hero>
+      <swing-champions-rankings></swing-champions-rankings>
+      `;
+    }
+    if (this.page === "players"){
+      return html`
+      <swing-champions-player-card></swing-champions-player-card>
+      `;
+    }
+    if(this.page === "rankings") {
+      return html`
+      <swing-champions-rankings></swing-champions-rankings>
+      `;
+    }
+
+    if (this.page === "schedule") {
+      return html`
+      <swing-champions-schedule></swing-champions-schedule>
+      `;
+    }
+
+    return html`
+    <swing-champions-hero></swing-champions-hero>
+    `;
+
+
+  }
   render() {
     return html`
 <div class="wrapper">
 <swing-champions-header title="${this.title}"></swing-champions-header>
 <swing-champions-menu></swing-champions-menu>
 <main>
-${this.page === "home"
-? html`
-<swing-champions-hero></swing-champions-hero>
-<swing-champions-rankings></swing-champions-rankings>
-<swing-champions-player-card></swing-champions-player-card>
-`
-: html`
-<swing-champions-schedule></swing-champions-schedule>
-`}
+${this.renderPage()}
 </main>
 <swing-champions-footer></swing-champions-footer>
 </div>`;

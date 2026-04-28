@@ -1,8 +1,8 @@
 import { LitElement, html, css } from "lit";
-import { DDDSuper } from "@haxtheweb/d-d-d";
+import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 
 // this is a header that shows. the site title and short description 
-export class SwingChampionsHeader extends LitElement {
+export class SwingChampionsHeader extends DDDSuper(LitElement) {
     static get tag() {
         return "swing-champions-header";
     }
@@ -27,7 +27,8 @@ export class SwingChampionsHeader extends LitElement {
 
             .header-wrap {
                 padding: var(--ddd-spacing-5) var(--ddd-spacing-6);
-                border-radius: var(--ddd-raduis-lg);
+                border-radius: var(--ddd-radius-lg);
+                text-align: center;
 
                 background: linear-gradient( 
                     135deg, light-dark(
@@ -52,6 +53,13 @@ export class SwingChampionsHeader extends LitElement {
             h1 {
                 font-size: var(--ddd-font-size-xxxl);
             }
+            img {
+                width: 80px;
+                height: 80px;
+                border-radius: var(--ddd-radius-md);
+                display: block;
+            }
+            
             `,
         ];
     }
@@ -60,6 +68,8 @@ export class SwingChampionsHeader extends LitElement {
     render () {
         return html`
         <header class="header-wrap">
+        <img src="./pics/tennisapplogo.png" alt=" swing champions arena tennis app logo" />
+
         <h1>${this.title}</h1>
         <p>Tennis matches, rankings, teams, and player information</p>
         </header>

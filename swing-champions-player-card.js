@@ -10,9 +10,9 @@ export class SwingChampionsPlayerCard extends DDDSuper(LitElement) {
 
         //players data i need to add which are these 
         this.players = [
-            { name : "Sara" , team: "404 Rally Not Found", role: "Baseline player" },
-            { name : "Maya", team: "Golden Swing Tennis", role: "Power server" },
-            { name : "Jena", team: "Next Gen Ten", role: "Net player" },
+            { name : "Sara" , team: "404 Rally Not Found", role: "Baseline player", img: "./pics/sara.png" },
+            { name : "Maya", team: "Golden Swing Tennis", role: "Power server", img: "./pics/maya.png" },
+            { name : "Jena", team: "Next Gen Ten", role: "Net player", img: "./pics/jena.png"},
         ];
     }
     static get styles() {
@@ -23,6 +23,8 @@ export class SwingChampionsPlayerCard extends DDDSuper(LitElement) {
             .card {
                 border-radius: var(--ddd-radius-md);
                 padding: var(--ddd-spacing-3);
+                border: 2px solid var(--ddd-theme-default-purple);
+                text-align: center;
                 background: light-dark(var(--ddd-theme-default-white), var(--ddd-theme-default-navy70));
             }
             .player-box {
@@ -30,6 +32,25 @@ export class SwingChampionsPlayerCard extends DDDSuper(LitElement) {
                 border: 2px solid var(--ddd-theme-default-skyBlue);
                 padding: var(--ddd-spacing-5);
                 background: light-dark(var(--ddd-theme-default-skyMaxLight), var(--ddd-theme-default-navy80));
+            }
+            .player-grid {
+                display: grid;
+                gap: var(--ddd-spacing-4);
+                grid-template-columns: repeat(auto-fit, minmac(220px, 1fr)); // this is basically to adjust screen and i guess responsive
+            }
+            .player-img {
+                width: 140px;
+                height: 140px;
+                object-fit: cover;
+                border-radius: var(--ddd-radius-md);
+                background: var(--ddd-theme-default-potentialMidnight);
+                border: 3px solid var(--ddd-theme-default-skyBlue);
+                image-rendering: pixelated;
+                margin-bottom: var(--ddd-spacing-2);
+            }
+
+            .name {
+                font-weight: bold;
             }
 
             `,
@@ -42,18 +63,20 @@ export class SwingChampionsPlayerCard extends DDDSuper(LitElement) {
     }
     render() {
         return html`
-        <div class="Player-box">
-        <h2>Players card</h2>
-        ${this.players.map(
-            (player) => html`
-            <div class="card">
-                <p><strong>${player.name}</strong></p>
-                <p>Team: ${player.team}</p>
-                <p>Role: ${player.role}</p>
+        <section class="player-box">
+            <h2>The Players</h2>
+            <div class="player-grid">
+                ${this.players.map(
+                    (player) => html`
+                    <div class="card">
+                     <img class="player-img" src="${player.img}" alt="${player.name} player"/>
+                     <p class="name"><strong>${player.name}</strong></p>
+                    <p>Team: ${player.team}</p>
+                    <p>Role: ${player.role}</p>
+                    </div>
+                    `)}
             </div>
-            `
-        )}
-        </div>
+            </section>
         `;
     }
 }
