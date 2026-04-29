@@ -117,6 +117,12 @@ export class SwingChampionsArena extends DDDSuper(I18NMixin(LitElement)) {
       <swing-champions-player-card></swing-champions-player-card>
       `;
     }
+
+    if(this.page === "teams"){
+      return html`
+      <swing-champions-ranking></swing-champions-ranking>
+      `;
+    }
     if(this.page === "rankings") {
       return html`
       <swing-champions-rankings></swing-champions-rankings>

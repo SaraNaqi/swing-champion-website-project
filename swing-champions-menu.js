@@ -22,6 +22,14 @@ export class SwingChampionsMenu extends DDDSuper(LitElement) {
                 flex-wrap: wrap;
                 display: flex;
             }
+            .dropdown-menu {
+                display: block;
+            }
+            
+            summary {
+            cursor: pointer;
+            font-weight: bold;
+            }
             `,
         ];
     }
@@ -30,10 +38,18 @@ export class SwingChampionsMenu extends DDDSuper(LitElement) {
         return html`
         <div class="menu-wrap">
             <swing-champions-menu-items label="Home" page="home"></swing-champions-menu-items>
-            <swing-champions-menu-items label="Players" page="players"></swing-champions-menu-items>
-            <swing-champions-menu-items label="Teams" page="teams"></swing-champions-menu-items>
+
+         
             <swing-champions-menu-items label="Schedule" page="schedule"></swing-champions-menu-items>
             <swing-champions-menu-items label="Rankings" page="rankings"></swing-champions-menu-items>
+
+            <details class="dropdown-menu">
+                <summary>who's playing?? </summary>
+                <div class="whos-playing-menu">
+            <swing-champions-menu-items label="Players" page="players"></swing-champions-menu-items>
+            <swing-champions-menu-items label="Teams" page="teams"></swing-champions-menu-items>
+        </div>
+        </details>
         </div>
         `;
     }
