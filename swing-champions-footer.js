@@ -52,12 +52,13 @@ return [
     render() {
         return html` <!-- foooter information -->
         <footer>
-        <h3>Contact Us!</h3>
+        <h3>Contact Us & Check Our Socials!!!!</h3>
 
         <div class="links">
             <a href="https://hax.psu.edu" target="_blank"> Instagram</a>
             <a href="https://hax.psu.edu" target="_blank">Twitter</a>
             <a href="https://hax.psu.edu" target="_blank">Facebook</a>
+            <a href="https://hax.psu.edu" target="_blank"> TikTok</a>
         </div>
         <p> 2026 Swing Champions Arena</p>
         <p>Phone: +1 (843) 485-7690</p>
