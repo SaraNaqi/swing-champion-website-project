@@ -68,7 +68,7 @@ export class SwingChampionsHeader extends DDDSuper(LitElement) {
     render () {
         return html`
         <header class="header-wrap">
-        <img src="./pics/tennisapplogo.png" alt=" swing champions arena tennis app logo" />
+        <img src="/pics/tennisapplogo.png" alt=" swing champions arena tennis app logo" />
 
         <h1>${this.title}</h1>
         <p>Tennis matches, rankings, teams, and player information</p>
