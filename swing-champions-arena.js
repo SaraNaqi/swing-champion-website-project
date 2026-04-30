@@ -109,7 +109,7 @@ export class SwingChampionsArena extends DDDSuper(I18NMixin(LitElement)) {
     if (this.page === "home") {
       return html`
       <swing-champions-hero></swing-champions-hero>
-      <swing-champions-rankings></swing-champions-rankings>
+     <!-- <swing-champions-hero></swing-champions-hero> i can add this if i want the home page to have more than a thing -->
       `;
     }
     if (this.page === "players"){

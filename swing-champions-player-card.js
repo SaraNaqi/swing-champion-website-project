@@ -15,7 +15,7 @@ export class SwingChampionsPlayerCard extends DDDSuper(LitElement) {
             { name : "Sara" , team: "404 Rally Not Found", role: "Baseline player", img: "./pics/sara.png" },
             { name : "scary ghost's cousin", team: "404 Rally Not Found", role: "Baseline player/ just wants to annoy scary ghost", img: "./pics/scaryghost'scousin.png"},
             { name : "Jena", team: "Next Gen Ten", role: "Net player", img: "./pics/jena.png"},
-            { name : "claire", team: "Next Gen Ten", role: "Power server", img: "./pics/claire.png"},
+            { name : "emma", team: "Next Gen Ten", role: "Power server", img: "./pics/emma.png"},
         ];
     }
     static get styles() {
