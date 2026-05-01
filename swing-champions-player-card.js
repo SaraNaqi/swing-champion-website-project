@@ -10,11 +10,11 @@ export class SwingChampionsPlayerCard extends DDDSuper(LitElement) {
 
         //players data i need to add which are these 
 
-        // ill try importing 
-        import mayaImg from "./pics/maya.png";
+       
+        
         this.players = [
             { name : "scary ghost", team: "Golden Swing Tennis", role: "Net player", img: "./pics/scaryghost.png"},
-            { name : "Maya", team: "Golden Swing Tennis", role: "Power server", img: mayaImg },
+            { name : "Maya", team: "Golden Swing Tennis", role: "Power server", img: "./pics/maya.png" },
             { name : "Sara" , team: "404 Rally Not Found", role: "Baseline player", img: "./pics/sara.png" },
             { name : "scary ghost's cousin", team: "404 Rally Not Found", role: "Baseline player/ just wants to annoy scary ghost", img: "./pics/scaryghostcousin.png"},
             { name : "Jena", team: "Next Gen Ten", role: "Net player", img: "./pics/jena.png"},
