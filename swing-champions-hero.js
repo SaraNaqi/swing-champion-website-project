@@ -43,7 +43,7 @@ export class SwingChampionsHero extends DDDSuper(LitElement) {
         return html`
         <div class="hero-box">
         <h2> Hey Welcome to the Swing champions arena website!!!</h2>
-        <p> this is a tennis website that shows matches, teams, match players and rankings. you can look around and click on each section </p>
+        <p> this is a tennis website that shows when is the upcoming matches, what teams that are registered for the competition, match players and rankings!!!! you can look around and click on each section to learn more about the championship </p>
         </div>
         `;
     }
