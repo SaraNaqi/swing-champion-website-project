@@ -13,12 +13,12 @@ export class SwingChampionsPlayerCard extends DDDSuper(LitElement) {
        
         
         this.players = [
-            { name : "scary ghost", team: "Golden Swing Tennis", role: "Net player", img: "./pics/scaryghost.png"},
-            { name : "Maya", team: "Golden Swing Tennis", role: "Power server", img: "./pics/maya.png" },
-            { name : "Sara" , team: "404 Rally Not Found", role: "Baseline player", img: "./pics/sara.png" },
-            { name : "scary ghost's cousin", team: "404 Rally Not Found", role: "Baseline player/ just wants to annoy scary ghost", img: "./pics/scaryghostcousin.png"},
-            { name : "Jena", team: "Next Gen Ten", role: "Net player", img: "./pics/jena.png"},
-            { name : "emma", team: "Next Gen Ten", role: "Power server", img: "./pics/emma.png"},
+            { name : "scary ghost", team: "Golden Swing Tennis", role: "Net player", img: "/pics/scaryghost.png"},
+            { name : "Maya", team: "Golden Swing Tennis", role: "Power server", img: "/pics/maya.png" },
+            { name : "Sara" , team: "404 Rally Not Found", role: "Baseline player", img: "/pics/sara.png" },
+            { name : "scary ghost's cousin", team: "404 Rally Not Found", role: "Baseline player/ just wants to annoy scary ghost", img: "/pics/scaryghostcousin.png"},
+            { name : "Jena", team: "Next Gen Ten", role: "Net player", img: "/pics/jena.png"},
+            { name : "emma", team: "Next Gen Ten", role: "Power server", img: "/pics/emma.png"},
         ];
     }
     static get styles() {
