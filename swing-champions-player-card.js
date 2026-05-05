@@ -75,7 +75,7 @@ export class SwingChampionsPlayerCard extends DDDSuper(LitElement) {
                 ${this.players.map(
                     (player) => html`
                     <div class="card">
-                     <img class="player-img" src="${player.img}" alt="${player.name} player"/>
+                     <img class="player-img" src="${player.img}" alt="${player.name}"/>
                      <p class="name"><strong>${player.name}</strong></p>
                     <p>Team: ${player.team}</p>
                     <p>Role: ${player.role}</p>
